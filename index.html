@@ -302,10 +302,7 @@
         Aayan Pratim Deb<br>
         Giants Class of 2021
     </div>
-
-    <audio id="buzzerSound">
-        <source src="buzzer.mp3" type="audio/mpeg">
-    </audio>
+    
 
     <button id="darkModeButton" onclick="toggleDarkMode()">Dark Mode</button>
     <button id="idleModeButton" onclick="toggleIdleMode()">Idle Mode</button>
@@ -377,7 +374,6 @@
         function buzz(buzzerNumber) {
             const playerName = buzzerNumber.toString();
             const buzzer = document.getElementById(`buzzer${buzzerNumber}`);
-            const buzzerSound = document.getElementById("buzzerSound");
 
             if (!idleMode && queue.includes(playerName)) {
                 // Do not buzz if idle mode is enabled and player is already in the queue
@@ -397,7 +393,6 @@
                 queueDisplay.textContent = "Queue:\n" + queue.join("\n");
             }
 
-            buzzerSound.play(); // Play the sound effect
 
             if (!buzzerColors[buzzerNumber]) {
                 // Store the buzzer color if not already stored (to keep the original color)
